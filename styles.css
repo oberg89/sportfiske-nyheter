@@ -1,0 +1,136 @@
+/* Custom styles for Sportfiske Nyheter */
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Den här färgen valde jag för att den känns seriös och passar sportfiske-temat */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #1E3A5F;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.logo-text span {
+    color: #27ae60;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Jag valde en gradient här för att navbaren ska kännas lite modernare */
+.navbar {
+    background: #1E3A5F;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: #27ae60 !important;
+}
+
+.nav-link.active {
+    color: #27ae60 !important;
+    font-weight: 600;
+}
+
+/* Här fixar jag så att texten i hero-sektionen alltid hamnar längst ner i bilden */
+.hero-section {
+    position: relative;
+    background: url('abborre.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 60px;
+    margin-bottom: 0;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75); /* starkare än tidigare */
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    color: #ffffff;
+    font-weight: 800;
+    text-shadow: 0 3px 15px rgba(0,0,0,0.8);
+}
+
+.hero-section p {
+    color: #f1f1f1;
+    font-size: 1.1rem;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Förbättrade cards */
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* Här sätter jag lite hover-effekt på cards för att få mer liv i sidan när man hovrar */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+/* Sidebar styling */
+aside .bg-white, aside .card {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+}
+
+/* Custom button color to match fishing theme */
+/* Den här gröna färgen använder jag för alla knappar för att matcha accentfärgen i loggan */
+.btn-success {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: #219150;
+    border-color: #219150;
+    transform: scale(1.02);
+}
+
+/* Bildjusteringar */
+.img-fluid.rounded {
+    border-radius: 12px !important;
+}
