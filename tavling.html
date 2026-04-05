@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tävlingar - Sportfiske Nyheter</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar - Navbaren är densamma på alla sidor för att man lätt ska hitta tillbaka -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="index.html">
+                SPORTFISKE<span>NYHETER</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Nyheter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="abborre.html">Abborre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gadda.html">Gädda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="tavling.html">Tävling</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header - En enkel och centrerad header för att välkomna besökaren till tävlingssidan -->
+    <header class="py-5 bg-light border-bottom">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Tävlingar inom sportfiske</h1>
+            <p class="lead">Tävlingsfiske i Sverige växer så det knakar. Här hittar du de senaste nyheterna om tävlingar, cuper och event för alla nivåer.</p>
+        </div>
+    </header>
+
+    <!-- Main Content & Sidebar - Här använder jag samma 8/4-grid som på de andra sidorna för att vara konsekvent -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Main Content (Left) -->
+            <main class="col-lg-8">
+                <h2 class="h3 mb-4">Tävlingsnyheter</h2>
+                
+                <!-- Competition 1 - Varje tävling visas i ett Bootstrap card med en stretched-link för klickbarhet -->
+                <div class="card mb-4 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="boatcompetion.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Streetfiske Stockholm">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title h4">Streetfisketävling i Stockholm</h5>
+                                <p class="card-text text-muted">Stockholms ström sjuder av liv när årets stora streetfiske-event går av stapeln. Vem fångar den tyngsta abborren mitt i city?</p>
+                                <a href="#" class="btn btn-success btn-sm">Anmäl dig här</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competition 2 -->
+                <div class="card mb-4 overflow-hidden">
+                    <div class="row g-0 flex-md-row-reverse">
+                        <div class="col-md-5">
+                            <img src="tavlingsgadda.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Gäddfiske-cup">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title h4">Gäddfiske-cup i skärgården</h5>
+                                <p class="card-text text-muted">Vårens stora höjdpunkt för gäddfiskare. En lagtävling där total längd räknas. Stora priser står på spel!</p>
+                                <a href="#" class="btn btn-success btn-sm">Läs mer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competition 3 -->
+                <div class="card mb-4 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="boatcompetion.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Abborrtävling Mälaren">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title h4">Abborrtävling i Mälaren</h5>
+                                <p class="card-text text-muted">Mälaren bjuder på fantastiskt abborrfiske. Denna tävling fokuserar på hållbart fiske med strikt Catch & Release.</p>
+                                <a href="#" class="btn btn-success btn-sm">Se resultat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Sidebar (Right) - Här listar jag kommande tävlingar i en snygg list-group -->
+            <aside class="col-lg-4">
+                <div class="p-4 bg-white rounded">
+                    <h3 class="h4 mb-3 border-bottom pb-2">Kommande tävlingar</h3>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item border-0 px-0">
+                            <h6 class="mb-1 fw-bold">Vår-Gäddan 2026</h6>
+                            <p class="small text-muted mb-0"><i class="bi bi-calendar-event me-2"></i>15 Maj - Trosa Skärgård</p>
+                        </div>
+                        <div class="list-group-item border-0 px-0">
+                            <h6 class="mb-1 fw-bold">Mälaren Bass Open</h6>
+                            <p class="small text-muted mb-0"><i class="bi bi-calendar-event me-2"></i>2 Juni - Västerås</p>
+                        </div>
+                        <div class="list-group-item border-0 px-0">
+                            <h6 class="mb-1 fw-bold">City Perch Battle</h6>
+                            <p class="small text-muted mb-0"><i class="bi bi-calendar-event me-2"></i>12 Juni - Göteborg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-4 bg-dark text-white rounded shadow-sm">
+                    <h4 class="h5">Vill du synas här?</h4>
+                    <p class="small">Anordnar ni en tävling? Kontakta oss för att lista ert event på Sportfiske.se.</p>
+                    <button class="btn btn-outline-light btn-sm w-100">Kontakta oss</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 text-center mt-5">
+        <div class="container">
+            <div class="mb-3">
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-instagram fs-4"></i></a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-youtube fs-4"></i></a>
+                <a href="#" class="text-white text-decoration-none"><i class="bi bi-facebook fs-4"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2026 Sportfiske.se</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
