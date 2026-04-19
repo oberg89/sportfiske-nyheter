@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportfiske Nyheter - Abborre & Gädda</title>
+    <!-- Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar - Här har jag byggt navbaren med Bootstrap för att få den responsiv och snygg på alla skärmar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="index.html">
+                SPORTFISKE<span>NYHETER</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Nyheter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="abborre.html">Abborre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gadda.html">Gädda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tavling.html">Tävling</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero-sektionen - Jag använder en overlay här för att texten ska synas bra mot bakgrundsbilden -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3">Välkommen till Sportfiske Nyheter</h1>
+            <p>De senaste nyheterna om abborre och gädda i Sverige.</p>
+            <div class="mt-4">
+                <a href="#nyheter" class="btn btn-success btn-lg px-4 me-md-2">Senaste nytt</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content & Sidebar - Här använder jag Bootstrap grid för att dela upp sidan i en huvuddel och en sidebar -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Main Content (Left) -->
+            <main class="col-lg-8" id="nyheter">
+                <h2 class="mb-4"><i class="bi bi-newspaper me-2"></i>Senaste nytt</h2>
+                
+                <div id="articles-container">
+                    <!-- Artiklar laddas dynamiskt här -->
+                </div>
+
+            </main>
+
+            <!-- Sidebar (Right) - En enkel sidebar med senaste nytt för att fylla ut sidan -->
+            <aside class="col-lg-4">
+                <!-- Skapa ny artikel -->
+                <div class="p-4 bg-white rounded mb-4">
+                    <h3 class="h4 mb-3 border-bottom pb-2">Skapa ny artikel</h3>
+                    <form id="article-form">
+                        <div class="mb-3">
+                            <label for="article-title-input" class="form-label">Titel</label>
+                            <input type="text" class="form-control" id="article-title-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="article-content-input" class="form-label">Innehåll</label>
+                            <textarea class="form-control" id="article-content-input" rows="6" required placeholder="Skriv din artikel här. Lämna tom rad mellan paragrafer för bättre läsbarhet."></textarea>
+                            <div class="form-text">Tips: Lämna en tom rad mellan paragrafer för automatisk textformatering.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="article-image-input" class="form-label">Bild-URL (valfritt)</label>
+                            <input type="url" class="form-control" id="article-image-input" placeholder="https://exempel.se/bild.jpg">
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Publicera</button>
+                    </form>
+                </div>
+
+                <div class="p-4 bg-white rounded">
+                    <h3 class="h4 mb-3 border-bottom pb-2">Senaste</h3>
+                    <div class="list-group list-group-flush">
+                        <a href="abborre.html" class="list-group-item list-group-item-action border-0 px-0">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Tävlingstips för Abborre</h6>
+                            </div>
+                            <small class="text-muted">Publicerad idag</small>
+                        </a>
+                        <a href="gadda.html" class="list-group-item list-group-item-action border-0 px-0">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Gäddfiske i insjöar</h6>
+                            </div>
+                            <small class="text-muted">Publicerad igår</small>
+                        </a>
+                        <a href="ekolod.html" class="list-group-item list-group-item-action border-0 px-0">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Bästa ekoloden 2026</h6>
+                            </div>
+                            <small class="text-muted">2 dagar sedan</small>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Extra Sidebar Box -->
+                <div class="mt-4 p-4 bg-dark text-white rounded shadow-sm">
+                    <h4 class="h5">Bli Medlem!</h4>
+                    <p class="small">Få exklusiva fisketips och nyheter direkt i din inbox.</p>
+                    <button class="btn btn-outline-light btn-sm w-100">Anmäl nyhetsbrev</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Toast container -->
+    <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+    <!-- Footer - En enkel mörk footer med sociala ikoner som jag lagt till på alla sidor -->
+    <footer class="bg-dark text-white py-5 text-center mt-5">
+        <div class="container">
+            <div class="mb-3">
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-instagram fs-4"></i></a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-youtube fs-4"></i></a>
+                <a href="#" class="text-white text-decoration-none"><i class="bi bi-facebook fs-4"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2026 Sportfiske.se</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
