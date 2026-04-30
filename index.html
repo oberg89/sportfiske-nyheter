@@ -57,110 +57,51 @@
         <div class="row">
             <!-- Main Content (Left) -->
             <main class="col-lg-8" id="nyheter">
-                <h2 class="mb-4"><i class="bi bi-newspaper me-2"></i>Senaste nytt</h2>
+                <!-- Knapp för att öppna modal för ny artikel -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0"><i class="bi bi-newspaper me-2"></i>Senaste nytt</h2>
+                    <button type="button" class="btn btn-success shadow-sm" data-bs-toggle="modal" data-bs-target="#createArticleModal">
+                        <i class="bi bi-plus-circle me-2"></i>Skapa ny artikel
+                    </button>
+                </div>
+
+                <!-- Modal för att skapa ny artikel -->
+                <div class="modal fade" id="createArticleModal" tabindex="-1" aria-labelledby="createArticleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header bg-success text-white">
+                                <h5 class="modal-title" id="createArticleModalLabel"><i class="bi bi-plus-circle me-2"></i>Skapa ny nyhetsartikel</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="article-form">
+                                    <div class="mb-3">
+                                        <label for="article-title-input" class="form-label">Titel</label>
+                                        <input type="text" class="form-control" id="article-title-input" placeholder="Ange artikelns titel" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="article-image-input" class="form-label">Bild-URL (valfritt)</label>
+                                        <input type="url" class="form-control" id="article-image-input" placeholder="https://exempel.se/bild.jpg">
+                                        <div class="form-text">Tips: Använd bilder som finns i mappen, t.ex. <code>gadda.jpeg</code> eller <code>abborre.jpg</code></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="article-content-input" class="form-label">Innehåll</label>
+                                        <textarea class="form-control" id="article-content-input" rows="6" placeholder="Skriv artikelns innehåll här..." required></textarea>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Avbryt</button>
+                                        <button type="submit" class="btn btn-success px-4">Spara artikel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="articles-container">
+                    <!-- Dynamiska artiklar från localStorage laddas här -->
+                </div>
                 
-                <!-- Artikel 1: Stefan - Här använder jag Bootstrap cards för att visa nyheter på ett snyggt sätt -->
-                <article class="card mb-4 overflow-hidden position-relative">
-                    <div class="row g-0">
-                        <div class="col-md-5">
-                            <img src="abborredubbel.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Stefan svensk mästare i abborre">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <span class="badge bg-danger mb-2">TOPPNYHET</span>
-                                <h3 class="card-title h4">Stefan svensk mästare i abborre</h3>
-                                <p class="card-text">Efter en dramatisk final i skärgården står det nu klart: Stefan är årets svenska mästare. Segerfisken vägde hela 1.8 kg och fångades på en färgglad jigg.</p>
-                                <a href="abborre.html" class="btn btn-success btn-sm stretched-link">Läs hela reportaget</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artikel 2: Rekordabborre -->
-                <article class="card mb-4 overflow-hidden position-relative">
-                    <div class="row g-0 flex-md-row-reverse">
-                        <div class="col-md-5">
-                            <img src="abborre.jpg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Abborre på 2050 gram">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <span class="badge bg-warning text-dark mb-2">REKORD</span>
-                                <h3 class="card-title h4">Abborre på 2050 gram fångad</h3>
-                                <p class="card-text">En riktig drömfisk har kommit upp i Mälaren. Det är en av de största abborrarna som registrerats i år. "Det var en tung kamp", säger fångstmannen.</p>
-                                <a href="rekord-abborre.html" class="btn btn-success btn-sm stretched-link">Se bilderna</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artikel 3: Tävling -->
-                <article class="card mb-4 overflow-hidden position-relative">
-                    <div class="row g-0">
-                        <div class="col-md-5">
-                            <img src="boatcompetion.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Tävlingsfiske">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <span class="badge bg-info text-dark mb-2">TÄVLING</span>
-                                <h3 class="card-title h4">Stora båttävlingar drar igång</h3>
-                                <p class="card-text">Nu på lördag startar säsongens första stora båttävling för sportfiskare. Över 100 team är anmälda till startfältet i skärgården.</p>
-                                <a href="tavling-artikel.html" class="btn btn-success btn-sm stretched-link">Anmäl ditt team</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artikel 4: Gäddfiske -->
-                <article class="card mb-4 overflow-hidden position-relative">
-                    <div class="row g-0 flex-md-row-reverse">
-                        <div class="col-md-5">
-                            <img src="gadda.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Gäddfiske">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <span class="badge bg-primary mb-2">GUIDE</span>
-                                <h3 class="card-title h4">Vårfiske efter stora gäddor</h3>
-                                <p class="card-text">Isarna har gått och gäddorna börjar vakna till liv. Vi guidar dig till de bästa lekvikarna och rätt val av beten för säsongen.</p>
-                                <a href="gadda.html" class="btn btn-success btn-sm stretched-link">Läs guiden</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artikel 5: Utrustning -->
-                <article class="card mb-4 overflow-hidden position-relative">
-                    <div class="row g-0">
-                        <div class="col-md-5">
-                            <img src="rods.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Fiskeutrustning">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <span class="badge bg-secondary mb-2">TEST</span>
-                                <h3 class="card-title h4">Årets hetaste utrustning 2026</h3>
-                                <p class="card-text">Vi har testat de senaste spöna och rullarna på marknaden. Se vilka modeller som får bäst betyg för sitt pris i vårt stora test.</p>
-                                <a href="utrustning.html" class="btn btn-success btn-sm stretched-link">Till testet</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artikel 6: Ekolod -->
-                <article class="card mb-4 overflow-hidden position-relative">
-                    <div class="row g-0 flex-md-row-reverse">
-                        <div class="col-md-5">
-                            <img src="sonar.jpeg" class="img-fluid rounded h-100 object-fit-cover w-100" alt="Ekolod">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <span class="badge bg-dark mb-2">TEKNIK</span>
-                                <h3 class="card-title h4">Bemästra ditt ekolod</h3>
-                                <p class="card-text">Lär dig tolka bilderna på ditt sonar. Vi går igenom hur du ser skillnad på betesfisk och stora predatorer under båten.</p>
-                                <a href="ekolod.html" class="btn btn-success btn-sm stretched-link">Läs mer</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
             </main>
 
             <!-- Sidebar (Right) - En enkel sidebar med senaste nytt för att fylla ut sidan -->
@@ -193,7 +134,7 @@
                 <div class="mt-4 p-4 bg-dark text-white rounded shadow-sm">
                     <h4 class="h5">Bli Medlem!</h4>
                     <p class="small">Få exklusiva fisketips och nyheter direkt i din inbox.</p>
-                    <button class="btn btn-outline-light btn-sm w-100">Anmäl nyhetsbrev</button>
+                    <button class="btn btn-outline-light btn-sm w-100" onclick="showToast('Tack för din anmälan! Du får vårt nästa nyhetsbrev.')">Anmäl nyhetsbrev</button>
                 </div>
             </aside>
         </div>
@@ -211,7 +152,12 @@
         </div>
     </footer>
 
+    <!-- Toast container -->
+    <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
     <!-- Bootstrap 5 JS via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -178,17 +178,10 @@ function showToast(message) {
 
 // Funktion för att skapa förhandsvisning av artikelinnehåll
 function getPreviewText(content) {
-    // Ta första 150 tecken och hitta sista hela meningen
-    const preview = content.substring(0, 150);
-    const lastSentenceEnd = Math.max(
-        preview.lastIndexOf('.'),
-        preview.lastIndexOf('!'),
-        preview.lastIndexOf('?'),
-        preview.lastIndexOf('\n')
-    );
+    if (content.length <= 60) return content;
     
-    const cleanPreview = lastSentenceEnd > 0 ? preview.substring(0, lastSentenceEnd + 1) : preview;
-    return cleanPreview + (content.length > cleanPreview.length ? '...' : '');
+    const preview = content.substring(0, 60);
+    return preview + '...';
 }
 
 // Funktion för att ladda vald artikel (för article.html)
@@ -251,6 +244,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (title && content) {
                 saveArticle(title, content, imageUrl);
                 articleForm.reset();
+                
+                // Stäng modalen om den finns (Bootstrap 5 sätt)
+                const modalElement = document.getElementById('createArticleModal');
+                if (modalElement) {
+                    const modal = bootstrap.Modal.getInstance(modalElement);
+                    if (modal) {
+                        modal.hide();
+                    }
+                }
             } else {
                 showToast('Fyll i titel och innehåll!');
             }
