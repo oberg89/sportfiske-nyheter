@@ -66,7 +66,7 @@
                             <div class="card-body">
                                 <h5 class="card-title h4">Streetfisketävling i Stockholm</h5>
                                 <p class="card-text text-muted">Stockholms ström sjuder av liv när årets stora streetfiske-event går av stapeln. Vem fångar den tyngsta abborren mitt i city?</p>
-                                <a href="#" class="btn btn-success btn-sm">Anmäl dig här</a>
+                                <a href="tavling-artikel.html" class="btn btn-success btn-sm">Anmäl dig här</a>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                             <div class="card-body">
                                 <h5 class="card-title h4">Gäddfiske-cup i skärgården</h5>
                                 <p class="card-text text-muted">Vårens stora höjdpunkt för gäddfiskare. En lagtävling där total längd räknas. Stora priser står på spel!</p>
-                                <a href="#" class="btn btn-success btn-sm">Läs mer</a>
+                                <a href="gadda.html" class="btn btn-success btn-sm">Läs mer</a>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                             <div class="card-body">
                                 <h5 class="card-title h4">Abborrtävling i Mälaren</h5>
                                 <p class="card-text text-muted">Mälaren bjuder på fantastiskt abborrfiske. Denna tävling fokuserar på hållbart fiske med strikt Catch & Release.</p>
-                                <a href="#" class="btn btn-success btn-sm">Se resultat</a>
+                                <a href="resultat.html" class="btn btn-success btn-sm">Se resultat</a>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                 <div class="mt-4 p-4 bg-dark text-white rounded shadow-sm">
                     <h4 class="h5">Vill du synas här?</h4>
                     <p class="small">Anordnar ni en tävling? Kontakta oss för att lista ert event på Sportfiske.se.</p>
-                    <button class="btn btn-outline-light btn-sm w-100">Kontakta oss</button>
+                    <button class="btn btn-outline-light btn-sm w-100" onclick="showToast('Tack för ditt intresse! Vi kontaktar dig snart.')">Kontakta oss</button>
                 </div>
             </aside>
         </div>
@@ -146,7 +146,12 @@
         </div>
     </footer>
 
+    <!-- Toast container -->
+    <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
     <!-- Bootstrap 5 JS via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
