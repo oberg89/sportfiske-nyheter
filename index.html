@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <!-- Den här sidan är startsidan där alla nyheter visas -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sportfiske Nyheter - Abborre & Gädda</title>
-    <!-- Bootstrap 5 CSS via CDN -->
+    
+    <!-- Jag använder Bootstrap 5 för att snabbt få en snygg och responsiv layout utan att skriva all CSS själv -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons via CDN -->
+    <!-- Bootstrap Icons för att få snygga små symboler på knappar och i menyn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
+    <!-- Min egna CSS-fil där jag har lagt till de personliga detaljerna som färger och animationer -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navbar - Här har jag byggt navbaren med Bootstrap för att få den responsiv och snygg på alla skärmar -->
+    <!-- Menyn (Navbar) - Den här ligger på alla sidor så att det är lätt att navigera -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand logo-text" href="index.html">
                 SPORTFISKE<span>NYHETER</span>
             </a>
+            <!-- Knappen som visas på mobiler för att fälla ut menyn -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,7 +44,7 @@
         </div>
     </nav>
 
-    <!-- Hero-sektionen - Jag använder en overlay här för att texten ska synas bra mot bakgrundsbilden -->
+    <!-- Hero-sektionen - Det stora välkomnandet med en snygg bakgrundsbild -->
     <header class="hero-section text-center">
         <div class="container">
             <h1 class="display-3">Välkommen till Sportfiske Nyheter</h1>
@@ -52,20 +55,20 @@
         </div>
     </header>
 
-    <!-- Main Content & Sidebar - Här använder jag Bootstrap grid för att dela upp sidan i en huvuddel och en sidebar -->
+    <!-- Huvudinnehållet - Här delas sidan upp i nyhetsflödet och en sidomeny -->
     <div class="container my-5">
         <div class="row">
-            <!-- Main Content (Left) -->
+            <!-- Vänstra sidan: Här hamnar alla nyhetsartiklar -->
             <main class="col-lg-8" id="nyheter">
-                <!-- Knapp för att öppna modal för ny artikel -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0"><i class="bi bi-newspaper me-2"></i>Senaste nytt</h2>
+                    <!-- Den här knappen öppnar popup-fönstret för att skapa en ny artikel -->
                     <button type="button" class="btn btn-success shadow-sm" data-bs-toggle="modal" data-bs-target="#createArticleModal">
                         <i class="bi bi-plus-circle me-2"></i>Skapa ny artikel
                     </button>
                 </div>
 
-                <!-- Modal för att skapa ny artikel -->
+                <!-- Popup-fönstret (Modal) för att skapa nya artiklar -->
                 <div class="modal fade" id="createArticleModal" tabindex="-1" aria-labelledby="createArticleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -74,6 +77,7 @@
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <!-- Mitt formulär för att samla in information om den nya artikeln -->
                                 <form id="article-form">
                                     <div class="mb-3">
                                         <label for="article-title-input" class="form-label">Titel</label>
@@ -98,13 +102,12 @@
                     </div>
                 </div>
 
-                <div id="articles-container">
-                    <!-- Dynamiska artiklar från localStorage laddas här -->
-                </div>
+                <!-- Den här containern fylls på med artiklar via JavaScript från localStorage -->
+                <div id="articles-container"></div>
                 
             </main>
 
-            <!-- Sidebar (Right) - En enkel sidebar med senaste nytt för att fylla ut sidan -->
+            <!-- Sidomenyn (Right) - Här har jag lagt till lite extra info och länkar -->
             <aside class="col-lg-4">
                 <div class="p-4 bg-white rounded">
                     <h3 class="h4 mb-3 border-bottom pb-2">Senaste</h3>
@@ -130,7 +133,7 @@
                     </div>
                 </div>
 
-                <!-- Extra Sidebar Box -->
+                <!-- En liten ruta för att anmäla sig till nyhetsbrevet -->
                 <div class="mt-4 p-4 bg-dark text-white rounded shadow-sm">
                     <h4 class="h5">Bli Medlem!</h4>
                     <p class="small">Få exklusiva fisketips och nyheter direkt i din inbox.</p>
@@ -140,7 +143,7 @@
         </div>
     </div>
 
-    <!-- Footer - En enkel mörk footer med sociala ikoner som jag lagt till på alla sidor -->
+    <!-- Footern längst ner på sidan -->
     <footer class="bg-dark text-white py-5 text-center mt-5">
         <div class="container">
             <div class="mb-3">
@@ -152,12 +155,12 @@
         </div>
     </footer>
 
-    <!-- Toast container -->
+    <!-- Här hamnar toast-meddelandena (notifikationerna) när de poppar upp -->
     <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
 
-    <!-- Bootstrap 5 JS via CDN -->
+    <!-- Bootstrap JavaScript som behövs för att menyn och popup-fönstret ska fungera -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Min JavaScript-fil som sköter all logik med artiklar och localStorage -->
     <script src="script.js"></script>
 </body>
 </html>

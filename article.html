@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <!-- Den här sidan visar en enskild artikel i sin helhet -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel - Sportfiske Nyheter</title>
-    <!-- Bootstrap 5 CSS via CDN -->
+    <!-- Bootstrap 5 CSS för layout och design -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons via CDN -->
+    <!-- Ikoner för gilla-knappar och annat -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
+    <!-- Min egna stilmall -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Menyn - Samma som på startsidan för att hålla stilen konsekvent -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand logo-text" href="index.html">
@@ -41,11 +42,11 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Innehållet för artikeln -->
     <div class="container my-5">
         <div class="row">
             <div class="col-lg-8">
-                <!-- Artikel -->
+                <!-- Själva artikeln med bild, titel och text -->
                 <article class="card mb-4">
                     <img id="article-image" src="" alt="" class="card-img-top" style="display: none;">
                     <div class="card-body">
@@ -55,7 +56,7 @@
                     </div>
                 </article>
 
-                <!-- Likes/Dislikes -->
+                <!-- Sektion för Likes och Dislikes - Sparas i localStorage -->
                 <div class="d-flex align-items-center mb-4">
                     <button class="btn btn-outline-success me-2" onclick="handleLike(window.currentArticleId)">
                         <i class="bi bi-hand-thumbs-up"></i> Gilla (<span id="likes-count">0</span>)
@@ -65,15 +66,16 @@
                     </button>
                 </div>
 
-                <!-- Kommentarer -->
+                <!-- Kommentarsfältet - Här kan besökare skriva vad de tycker -->
                 <div class="card">
                     <div class="card-header">
                         <h3 class="h5 mb-0">Kommentarer</h3>
                     </div>
                     <div class="card-body">
                         <div id="comments-container" class="mb-3">
-                            <!-- Kommentarer laddas här -->
+                            <!-- Här fyller JavaScript på med de kommentarer som finns sparade -->
                         </div>
+                        <!-- Formulär för att skicka en ny kommentar -->
                         <form id="comment-form">
                             <div class="mb-3">
                                 <label for="comment-text" class="form-label">Lägg till kommentar</label>
@@ -85,7 +87,7 @@
                 </div>
             </div>
 
-            <!-- Sidebar -->
+            <!-- Sidomeny med snabblänkar till andra nyheter -->
             <aside class="col-lg-4">
                 <div class="p-4 bg-white rounded">
                     <h3 class="h4 mb-3 border-bottom pb-2">Senaste</h3>
@@ -111,7 +113,7 @@
                     </div>
                 </div>
 
-                <!-- Extra Sidebar Box -->
+                <!-- En ruta för att locka till nyhetsbrev även här -->
                 <div class="mt-4 p-4 bg-dark text-white rounded shadow-sm">
                     <h4 class="h5">Bli Medlem!</h4>
                     <p class="small">Få exklusiva fisketips och nyheter direkt i din inbox.</p>
@@ -121,10 +123,10 @@
         </div>
     </div>
 
-    <!-- Toast container -->
+    <!-- Behållare för toast-notifikationer -->
     <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
 
-    <!-- Footer -->
+    <!-- Footer som är likadan på alla sidor -->
     <footer class="bg-dark text-white py-5 text-center mt-5">
         <div class="container">
             <div class="mb-3">
@@ -136,9 +138,9 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS via CDN -->
+    <!-- Bootstrap script för interaktivitet -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Min JavaScript som sköter hämtning av artikeldata och kommentarer -->
     <script src="script.js"></script>
 </body>
 </html>

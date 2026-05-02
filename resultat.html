@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+    <!-- Den här sidan visar resultaten från olika fisketävlingar -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultat - Sportfiske Nyheter</title>
-    <!-- Bootstrap 5 CSS via CDN -->
+    <!-- Bootstrap för snygga tabeller och layout -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons via CDN -->
+    <!-- Ikoner för navigation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
+    <!-- Min egna CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Menyn - Samma som på övriga sidor -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand logo-text" href="index.html">
@@ -41,7 +42,7 @@
         </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Sidhuvud med brödsmulor för att man lätt ska hitta tillbaka till tävlingssidan -->
     <header class="py-5 mb-5 bg-light border-bottom">
         <div class="container">
             <nav aria-label="breadcrumb">
@@ -56,10 +57,11 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Huvudinnehåll - Resultattabeller -->
     <main class="container mb-5">
         <div class="row">
             <div class="col-lg-8">
+                <!-- En sektion för en specifik tävling med en tabell -->
                 <section class="card shadow-sm mb-5">
                     <div class="card-header bg-success text-white">
                         <h2 class="h5 mb-0">Abborrtävling Mälaren - Slutresultat</h2>
@@ -98,6 +100,7 @@
                     </div>
                 </section>
 
+                <!-- Tidigare resultat samlade i en lista -->
                 <section class="card shadow-sm">
                     <div class="card-header bg-dark text-white">
                         <h2 class="h5 mb-0">Tidigare resultat</h2>
@@ -115,6 +118,7 @@
                 </section>
             </div>
 
+            <!-- Sidomeny med lite information om reglerna -->
             <aside class="col-lg-4">
                 <div class="p-4 bg-light rounded shadow-sm">
                     <h3 class="h5 fw-bold mb-3 border-bottom pb-2">Om våra resultat</h3>
@@ -124,7 +128,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - Samma på alla sidor -->
     <footer class="bg-dark text-white py-5 text-center mt-5">
         <div class="container">
             <div class="mb-3">
@@ -136,7 +140,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS via CDN -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
